@@ -1,0 +1,120 @@
+<!-- templates/users.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanıcı Yönetimi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sol sütunda Yeni Kullanıcı Ekle formu -->
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Yeni Kullanıcı Ekle</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('create_user_route') }}" method="post">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <div class="form-group">
+                            <label for="first_name">Ad</label>
+                            <input type="text" name="first_name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Soyad</label>
+                            <input type="text" name="last_name" class="form-control">
+                        </div>                      
+                        <div class="form-group">
+                            <label for="username">Kullanıcı Adı</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Şifre</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Rol</label>
+                            <select name="role" class="form-control">
+                                <option value="admin">admin</option>
+                                <option value="user" selected>user</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sağ sütunda kullanıcı listesi -->
+        <div class="col-md-9">
+            <!-- Flash Mesajları / Hata / Başarı -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flashes">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                                <span onclick="this.parentElement.style.display='none'">&times;</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <h1>Kullanıcı Listesi</h1>
+
+            {% if users and users|length > 0 %}
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Rol</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for u in users %}
+                    <tr>
+                        <td>{{ u['id'] }}</td>
+                        <td>{{ u['username'] }}</td>
+                        <td>{{ u['first_name'] }}</td>
+                        <td>{{ u['last_name'] }}</td>
+                        <td>{{ u['role'] }}</td>
+                        <td>
+                            <!-- Rol Değiştir Butonu -->
+                            <form action="{{ url_for('change_role') }}" method="post" style="display:inline;">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="user_id" value="{{ u['id'] }}">
+                                <select name="role" class="form-control d-inline-block" style="width:auto;">
+                                    <option value="admin" {% if u['role'] == 'admin' %}selected{% endif %}>admin</option>
+                                    <option value="user" {% if u['role'] == 'user' %}selected{% endif %}>user</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-warning">Değiştir</button>
+                            </form>
+                            <!-- Kullanıcı Sil Butonu -->
+                            <form action="{{ url_for('delete_user') }}" method="post" style="display:inline;">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="user_id" value="{{ u['id'] }}">
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
+                                    Sil
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="alert alert-warning">Kullanıcı bulunamadı.</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

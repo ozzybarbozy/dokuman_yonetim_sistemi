@@ -1,0 +1,66 @@
+Originator	Column1	DocumentType	Column2	Discipline	Column3	BuildingCode	Column4
+STP	Sumgait Technologies Park	3DS	3D Model/Isometric Sketch	DD	Design Development	GN00	General
+KLN	Kolin	BOQ	Bill of Quantities	CV	Civil	IN00	Infrastructure
+PRO	Proyapi/Prokon	CLC	Calculation	AR	Architectural	MB00	Mobilisation
+AZR	Azroksan	DST	Data Sheets	MC	Mechanical	ES01	ESB-01-AP Storage Building
+RKT	Roketsan	DTQ	Design Technical Query	EL	Electrical	ES02	ESB-02-AP Storage Handling Building
+		DVR	Deviation Request	EQ	Equipment	ES03	ESB-03-Fuse Storage
+		DWG	Drawing	WE	Weak Curent	ES04	ESB-04-Warhead Storage Building
+		ENI	Engineering Instruction	QM	Quality Management (QA/QC)	ES05	ESB-05-Ammunition Storage Building-1
+		FRM	Forms	HS	Health Safety and Environment	ES06	ESB-06-Ammunition Storage Building-2
+		GAD	General Arrangement Drawing	CP	Contract & Procurement Management	ES07	ESB-07-Ammunition Storage Building-3
+		IDF	Identification Form	PC	Planning & Cost-Control	ES08	ESB-08-Ammunition Storage Building-4
+		ITP	Inspection and Testing Plan	PM	Project Management	ES09	ESB-09-Storage for Destruction
+		JSA	Job Safety Assessment	CO	Commissioning & Operation	EW01	EWB-01-Hammer Mill Building
+		LOG	Log			EW02	EWB-02-AP Storage and Conditioning Building
+		LST	List			EW03	EWB-03-Mixer Building
+		MAP	Master Plan / Area Plan			EW04	EWB-04-Premix and Mixbowl Cleaning Building
+		MAR	Material Approval Request			EW05	EWB-05-Propellant Casting Building
+		MES	Method Statement			EW06	EWB-06-Propellant Mandrel Disassembly Building
+		MOM	Minutes of Meeting			EW07	EWB-07-X-ray and Quality Control Building
+		MRQ	Material Requisition			EW08	EWB-08-Laboratory Building
+		MTO	Material Take off			EW09	EWB-09-Small Scale Propellant Assembly Firing Test
+		NCR	Non Conformance Report			EW10	"EWB-10-Conditioning Building 
+(Small Scale Propellant Assembly)"
+		ORG	Organization Chart			EW11	EWB-11-Warhead Filling and Assembly Building
+		PLN	Plan			EW12	EWB-12-Warhead Press Building
+		PRC	Procedure			EW13	EWB-13-Final Assembly Building
+		REP	Report			GF01	GFB-01-Main Entrance Check Point
+		REQ	Requirement			GF02	GFB-02-Main Entrance Building (pedestrian)
+		RFI	Request For Inspection			GF03	GFB-03-Management_Administrative_R&D Office 
+		SOW	Scope Of Work			GF04	GFB-04-Cafeteria (Dining Hall Building)
+		SPE	Specification			GF05	GFB-05-Health Center
+		SSD	Steelwork Structures			GF06	GFB-06-Data Center
+		STI	Site Instruction			GF07	GFB-07-Facility Maintanance Office and Workshop
+		STN	Standards			GF08	GFB-08-Fire Station
+		STQ	Site Technical Query			GF09	GFB-09-Heating Plant
+		TOR	Terms Of Reference			GF10	GFB-10-Energetic Area Entrance Building
+		SRF	Supplier Vendor Approval Request			GF11	GFB-11-Security Tower (8 units)
+		SAR	Subcontractor Approval Request			GF12	GFB-12-Main Transformer Building
+		SCH	Schedule			G13A	GFB-13A-Transformer Building-A
+						G13B	GFB-13B-Transformer Building-B
+						G13C	GFB-13C-Transformer Building-C
+						G13D	GFB-13D-Transformer Building-D
+						G13E	GFB-13E-Transformer Building-E
+						G13F	GFB-13F-Transformer Building-F
+						G13G	GFB-13G-Transformer Building-G
+						G13H	GFB-13H-Transformer Building-H
+						G13I	GFB-13I-Transformer Building-I
+						GF14	GFB-14-Water Tank Building (Potable water)
+						GF15	GFB-15-Fire Water Tank Building
+						GF16	GFB-16-Waste Water Purification Plant 
+						GF17	GFB-17-Industrial Waste Water Purification Plant 
+						GF18	GFB-18-Temporary Waste Holding Area 
+						GF19	GFB-19-Main Entrance Logistics
+						IS01	ISB-01-Mixbowl_Mandrel and Tool Storage
+						IS02	"ISB-02-Inert Material Storage Building
+(Incoming Inspection and Calibration)"
+						IS03	ISB-03-Chemical Material Storage Building
+						IW01	IWB-01-Motor Case Production Building
+						IW1A	IWB-01A-Motor Case Preform Production Building
+						IW02	IWB-02-Motor Case Insulation and Composite
+						IW03	IWB-03-Spray Application Building
+						IW04	IWB-04-Control Building
+						IW05	IWB-05-Small Scale Propellant Assembly Test Control
+						IW06	IWB-06-Propellant Employee Office Building
+						IW07	IWB-07-Warhead Employee Office Building

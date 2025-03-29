@@ -1,0 +1,87 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Doküman Yükleme</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Doküman Yükle</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                            <span onclick="this.parentElement.style.display='none'">&times;</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+                <label for="file">Dosya Seçin:</label>
+                <input type="file" class="form-control-file" name="file" id="file" required 
+                       accept=".pdf,.docx,.txt,.xlsx,.dwg,.jpg,.jpeg,.png">
+                <small class="form-text text-muted">
+                    İzin verilen dosya türleri: PDF, DOCX, TXT, XLSX, DWG, JPG, PNG (Max 10MB)
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="description">Açıklama:</label>
+                <input type="text" class="form-control" name="description" id="description"
+                       placeholder="Dosya açıklaması girin">
+            </div>
+            <!-- Yeni: Doküman numaralandırma için ek alanlar -->
+            <div class="form-group">
+                <label for="originator">Originator:</label>
+                <select name="originator" id="originator" class="form-control">
+                    <!-- Bu seçenekler admin tarafından yapılandırılabilir veya sabit olabilir -->
+                    <option value="ORG1">ORG1</option>
+                    <option value="ORG2">ORG2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="document_type">Document Type:</label>
+                <select name="document_type" id="document_type" class="form-control">
+                    <option value="DT1">DT1</option>
+                    <option value="DT2">DT2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="discipline">Discipline:</label>
+                <select name="discipline" id="discipline" class="form-control">
+                    <option value="Civil">Civil</option>
+                    <option value="Electrical">Electrical</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="building_code">Building Code:</label>
+                <select name="building_code" id="building_code" class="form-control">
+                    <option value="B001">B001</option>
+                    <option value="B002">B002</option>
+                </select>
+            </div>
+            <!-- Kategori (isteğe bağlı) -->
+            <div class="form-group">
+                <label for="category">Kategori:</label>
+                <select name="category" class="form-control" id="category">
+                    <option value="">Seçiniz</option>
+                    <option value="pdf">PDF</option>
+                    <option value="image">Görsel</option>
+                    <option value="doc">Word/Doc</option>
+                    <option value="excel">Excel</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Yükle</button>
+        </form>
+        <div class="mt-4">
+            <a href="{{ url_for('documents') }}" class="btn btn-secondary">Doküman Listesine Dön</a>
+        </div>
+    </div>
+</body>
+</html>

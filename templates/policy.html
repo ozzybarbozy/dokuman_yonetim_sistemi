@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Doküman Politikası Yönetimi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Doküman Politikası Yönetimi</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                            <span onclick="this.parentElement.style.display='none'">&times;</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('manage_policy') }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <!-- Eğer mevcut bir politika düzenlenecekse, policy_id gönderin -->
+            <div class="form-group">
+                <label for="originator">Originator:</label>
+                <input type="text" name="originator" id="originator" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="document_type">Document Type:</label>
+                <input type="text" name="document_type" id="document_type" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="discipline">Discipline:</label>
+                <input type="text" name="discipline" id="discipline" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="building_code">Building Code:</label>
+                <input type="text" name="building_code" id="building_code" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="project_code">Project Code:</label>
+                <input type="text" name="project_code" id="project_code" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="revision_format">Revision Format:</label>
+                <input type="text" name="revision_format" id="revision_format" class="form-control" value="R%02d" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Politikayı Kaydet</button>
+        </form>
+
+        <hr>
+        <h2>Mevcut Politikalar</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Originator</th>
+                    <th>Document Type</th>
+                    <th>Discipline</th>
+                    <th>Building Code</th>
+                    <th>Project Code</th>
+                    <th>Revision Format</th>
+                    <th>Applied At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for policy in policies %}
+                <tr>
+                    <td>{{ policy.id }}</td>
+                    <td>{{ policy.originator }}</td>
+                    <td>{{ policy.document_type }}</td>
+                    <td>{{ policy.discipline }}</td>
+                    <td>{{ policy.building_code }}</td>
+                    <td>{{ policy.project_code }}</td>
+                    <td>{{ policy.revision_format }}</td>
+                    <td>{{ policy.applied_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

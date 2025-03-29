@@ -1,0 +1,47 @@
+<!-- templates/edit_policy.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Politikayı Düzenle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Politikayı Düzenle</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                            <span onclick="this.parentElement.style.display='none'">&times;</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('edit_policy', policy_id=policy.id) }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+                <label for="prefix">Ön Ek (Prefix):</label>
+                <input type="text" name="prefix" class="form-control" value="{{ policy.prefix }}">
+            </div>
+            <div class="form-group">
+                <label for="date_format">Tarih Formatı:</label>
+                <input type="text" name="date_format" class="form-control" value="{{ policy.date_format }}">
+            </div>
+            <div class="form-group">
+                <label for="separator">Ayırıcı (Separator):</label>
+                <input type="text" name="separator" class="form-control" value="{{ policy.separator }}">
+            </div>
+            <div class="form-group">
+                <label for="starting_number">Başlangıç Numarası:</label>
+                <input type="number" name="starting_number" class="form-control" value="{{ policy.starting_number }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+            <a href="{{ url_for('manage_policy') }}" class="btn btn-secondary">İptal</a>
+        </form>
+    </div>
+</body>
+</html>
