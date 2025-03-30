@@ -1,4 +1,4 @@
-from extensions import db  # ya da: from flask_sqlalchemy import SQLAlchemy; db = SQLAlchemy()
+from extensions import db
 from datetime import datetime
 from flask_login import UserMixin
 
@@ -23,15 +23,15 @@ class Document(db.Model):
     project_code = db.Column(db.String(50))
     revision = db.Column(db.Integer, default=1)
 
-class DocumentPolicy(db.Model):
-    __tablename__ = 'document_policies'
+class DocumentSequence(db.Model):
+    __tablename__ = 'document_sequences'
     id = db.Column(db.Integer, primary_key=True)
-    policy_json = db.Column(db.Text, nullable=False)
-    applied_at = db.Column(db.DateTime, default=datetime.utcnow)
-    # Yeni eklenen alanlar:
     originator = db.Column(db.String(50), nullable=False)
     document_type = db.Column(db.String(50), nullable=False)
     discipline = db.Column(db.String(50), nullable=False)
     building_code = db.Column(db.String(50), nullable=False)
-    project_code = db.Column(db.String(20), nullable=False)
-    revision_format = db.Column(db.String(10), nullable=False)
+    next_sequence = db.Column(db.Integer, nullable=False, default=1)
+
+    __table_args__ = (
+        db.UniqueConstraint('originator', 'document_type', 'discipline', 'building_code', name='uq_doc_seq'),
+    )

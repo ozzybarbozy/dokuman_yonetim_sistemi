@@ -8,7 +8,7 @@ from io import BytesIO
 import mimetypes
 import filetype
 
-from docx import Document
+from docx import Document as DocxDocument
 from pdf2image import convert_from_bytes
 from flask import (
     Flask, render_template, request, redirect,
@@ -25,10 +25,10 @@ from flask_migrate import Migrate
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 
-# Ortam değişkenlerini yükleyelim
+# Ortam değişkenlerini .env dosyasından yükleyelim.
 load_dotenv()
 
-# Extensions: db artık extensions.py üzerinden geliyor.
+# Database instance'ını extensions modülünden alıyoruz.
 from extensions import db
 
 def configure_logging():
@@ -57,22 +57,21 @@ app.config.from_object('config.Config')
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'instance', 'app.db')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize SQLAlchemy using the extensions module
+# Initialize extensions
 db.init_app(app)
 migrate = Migrate(app, db)
-
 csrf = CSRFProtect(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache'})
 
-# Modellerimizi models.py'den alıyoruz.
-from models import User, Document, DocumentPolicy, DocumentSequence
+# Modelleri içe aktaralım.
+from models import User, Document, DocumentSequence
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return db.session.get(User, int(user_id))
 
 def admin_required(f):
     from functools import wraps
@@ -106,8 +105,6 @@ def log_activity(action, filename=None):
     logger.info("User: %s - Action: %s - File: %s", 
                 current_user.username if current_user.is_authenticated else "Anonymous", 
                 action, filename or 'None')
-
-# ROUTES
 
 @app.route('/')
 def index():
@@ -189,10 +186,9 @@ def preview_file(filename):
             logger.error("PDF preview error: %s", str(e))
             flash('PDF preview error', 'error')
             return redirect(url_for('documents'))
-    
     elif mime_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
         try:
-            doc = Document(file_path)
+            doc = DocxDocument(file_path)
             full_text = [para.text for para in doc.paragraphs if para.text.strip()]
             preview_content = '<br>'.join(full_text[:20])
             return render_template('preview.html', content=preview_content, filename=safe_filename)
@@ -200,7 +196,6 @@ def preview_file(filename):
             logger.error("DOCX preview error: %s", str(e))
             flash('DOCX preview error', 'error')
             return redirect(url_for('documents'))
-    
     elif mime_type in ['image/jpeg', 'image/png']:
         try:
             with open(file_path, 'rb') as f:
@@ -211,11 +206,9 @@ def preview_file(filename):
             logger.error("Image preview error: %s", str(e))
             flash('Image preview error', 'error')
             return redirect(url_for('documents'))
-    
     elif mime_type.startswith('application/') or mime_type.startswith('image/'):
         flash('Bu dosya türü için önizleme desteklenmiyor.', 'info')
         return redirect(url_for('documents'))
-    
     else:
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -243,8 +236,6 @@ def admin_users():
 @login_required
 @admin_required
 def create_user_route():
-    # Not: Endpoint adı "create_user_route" kullanıldı, böylece
-    # models.py içinde tanımlı User ile karışmaz.
     if not all(k in request.form for k in ['username', 'password', 'role']):
         abort(400)
     
@@ -334,17 +325,13 @@ def upload_file():
             counter += 1
         file.save(file_path)
 
-        # Yeni form alanlarını oku
         originator = request.form.get('originator')
         document_type = request.form.get('document_type')
         discipline = request.form.get('discipline')
         building_code = request.form.get('building_code')
         category = request.form.get('category', '')
-        
-        # Revizyon başlangıç değeri; yeni dokümanlar için genellikle 0 veya 1
         revision = 0
 
-        # Doküman numarasını oluştur
         doc_number = generate_document_number(originator, document_type, discipline, building_code, revision)
 
         new_doc = Document(
@@ -353,7 +340,7 @@ def upload_file():
             upload_date=datetime.utcnow(),
             user_id=current_user.id,
             category=category,
-            project_code="SPP2",  # Politika veya sabit proje kodu
+            project_code="SPP2",
             revision=revision,
             document_number=doc_number
         )
@@ -368,47 +355,36 @@ def upload_file():
         logger.error("Upload error: %s", str(e))
         flash('File upload error', 'error')
     return redirect(url_for('documents'))
-def generate_document_number(originator, document_type, discipline, building_code, revision):
-            # En son eklenen aktif doküman politikasını alıyoruz.
-            policy = DocumentPolicy.query.order_by(DocumentPolicy.applied_at.desc()).first()
-            if not policy:
-                # Eğer henüz bir politika yoksa, varsayılan değerler kullanabiliriz.
-                policy = DocumentPolicy(
-                    originator=originator,
-                    document_type=document_type,
-                    discipline=discipline,
-                    building_code=building_code,
-                    project_code="SPP2",  # Varsayılan proje kodu
-                    revision_format="R%02d"
-                )
-            
-            # Belirtilen kombinasyon için DocumentSequence kaydını al veya oluştur.
-            seq = DocumentSequence.query.filter_by(
-                originator=originator,
-                document_type=document_type,
-                discipline=discipline,
-                building_code=building_code
-            ).first()
-            if not seq:
-                seq = DocumentSequence(
-                    originator=originator,
-                    document_type=document_type,
-                    discipline=discipline,
-                    building_code=building_code,
-                    next_sequence=1
-                )
-                db.session.add(seq)
-                db.session.flush()  # Yeni seq nesnesinin id atanması için
-            sequence_number = seq.next_sequence
-            seq.next_sequence += 1  # Gelecek numara için artırıyoruz.
-        
-            # Revizyon numarasını formatlıyoruz (örneğin, 0 için "R00")
-            revision_str = policy.revision_format % revision
-        
-            # Doküman numarası: [Originator]-[ProjectCode]-[DocumentType]-[Discipline]-[BuildingCode]-[SequenceNumber]_[RevisionNumber]
-            document_number = f"{originator}-{policy.project_code}-{document_type}-{discipline}-{building_code}-{sequence_number:03d}_{revision_str}"
-            return document_number
 
+def generate_document_number(originator, document_type, discipline, building_code, revision):
+    # Get the most recent policy for numbering; since DocumentPolicy is removed,
+    # use default values for project_code and revision_format.
+    default_project_code = "SPP2"
+    default_revision_format = "R%02d"
+    
+    # Get or create DocumentSequence record for the combination.
+    seq = DocumentSequence.query.filter_by(
+        originator=originator,
+        document_type=document_type,
+        discipline=discipline,
+        building_code=building_code
+    ).first()
+    if not seq:
+        seq = DocumentSequence(
+            originator=originator,
+            document_type=document_type,
+            discipline=discipline,
+            building_code=building_code,
+            next_sequence=1
+        )
+        db.session.add(seq)
+        db.session.flush()
+    sequence_number = seq.next_sequence
+    seq.next_sequence += 1
+
+    revision_str = default_revision_format % revision
+    document_number = f"{originator}-{default_project_code}-{document_type}-{discipline}-{building_code}-{sequence_number:03d}_{revision_str}"
+    return document_number
 
 @app.route('/download/<filename>')
 @login_required
@@ -472,71 +448,6 @@ def logout():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-@app.route('/admin/policy', methods=['GET', 'POST'])
-@login_required
-@admin_required
-def manage_policy():
-    if request.method == 'POST':
-        # Formdan gönderilen politika ayarlarını güncelleyin.
-        policy_id = request.form.get('policy_id')
-        originator = request.form.get('originator')
-        document_type = request.form.get('document_type')
-        discipline = request.form.get('discipline')
-        building_code = request.form.get('building_code')
-        project_code = request.form.get('project_code')
-        revision_format = request.form.get('revision_format')
-        
-        if policy_id:
-            policy = DocumentPolicy.query.get(int(policy_id))
-            if policy:
-                policy.originator = originator
-                policy.document_type = document_type
-                policy.discipline = discipline
-                policy.building_code = building_code
-                policy.project_code = project_code
-                policy.revision_format = revision_format
-        else:
-            policy = DocumentPolicy(
-                originator=originator,
-                document_type=document_type,
-                discipline=discipline,
-                building_code=building_code,
-                project_code=project_code,
-                revision_format=revision_format
-            )
-            db.session.add(policy)
-        db.session.commit()
-        flash('Doküman politikası güncellendi', 'success')
-        return redirect(url_for('manage_policy'))
-    else:
-        policies = DocumentPolicy.query.order_by(DocumentPolicy.applied_at.desc()).all()
-        return render_template('policy.html', policies=policies)
-
-@app.route('/admin/policy/edit/<int:policy_id>', methods=['GET', 'POST'])
-@login_required
-@admin_required
-def edit_policy(policy_id):
-    policy = DocumentPolicy.query.get_or_404(policy_id)
-    if request.method == 'POST':
-        policy.prefix = request.form.get('prefix', '')
-        policy.date_format = request.form.get('date_format', '%Y%m%d')
-        policy.separator = request.form.get('separator', '-')
-        policy.starting_number = request.form.get('starting_number', 1, type=int)
-        db.session.commit()
-        flash('Politika başarıyla güncellendi', 'success')
-        return redirect(url_for('manage_policy'))
-    return render_template('edit_policy.html', policy=policy)
-
-@app.route('/admin/policy/delete/<int:policy_id>', methods=['POST'])
-@login_required
-@admin_required
-def delete_policy(policy_id):
-    policy = DocumentPolicy.query.get_or_404(policy_id)
-    db.session.delete(policy)
-    db.session.commit()
-    flash('Politika başarıyla silindi', 'success')
-    return redirect(url_for('manage_policy'))
 
 @app.before_request
 def before_request():

@@ -49,7 +49,7 @@
 
         <!-- Sağ sütunda kullanıcı listesi -->
         <div class="col-md-9">
-            <!-- Flash Mesajları / Hata / Başarı -->
+            <!-- Flash mesajları -->
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     <div class="flashes">
@@ -100,8 +100,7 @@
                             <form action="{{ url_for('delete_user') }}" method="post" style="display:inline;">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="user_id" value="{{ u['id'] }}">
-                                <button type="submit" class="btn btn-sm btn-danger"
-                                        onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
                                     Sil
                                 </button>
                             </form>

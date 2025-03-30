@@ -756,3 +756,1629 @@ FROM document_policies ORDER BY document_policies.applied_at DESC
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2025-03-28 03:04:25,104 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 03:04:25] "[32mPOST /upload HTTP/1.1[0m" 302 -
 2025-03-28 03:04:25,111 - werkzeug - INFO - 127.0.0.1 - - [28/Mar/2025 03:04:25] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:02:49,343 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 00:02:49,343 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 00:02:56,463 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:02:56] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 00:03:02,489 - __main__ - INFO - User: admin - Action: login - File: None
+2025-03-30 00:03:02,492 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 00:03:02,565 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:02] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:19,937 - __main__ - INFO - User: admin - Action: delete - File: New_Microsoft_Excel_Worksheet_1.xlsx
+2025-03-30 00:03:19,940 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:19] "[32mGET /delete/New_Microsoft_Excel_Worksheet_1.xlsx HTTP/1.1[0m" 302 -
+2025-03-30 00:03:19,948 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:19] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:22,047 - __main__ - INFO - User: admin - Action: delete - File: Small_business_cash_flow_forecast1_1_2_3_4_5.pdf
+2025-03-30 00:03:22,050 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:22] "[32mGET /delete/Small_business_cash_flow_forecast1_1_2_3_4_5.pdf HTTP/1.1[0m" 302 -
+2025-03-30 00:03:22,057 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:22] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:24,342 - __main__ - INFO - User: admin - Action: delete - File: New_Microsoft_Word_Document_1_2.docx
+2025-03-30 00:03:24,344 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:24] "[32mGET /delete/New_Microsoft_Word_Document_1_2.docx HTTP/1.1[0m" 302 -
+2025-03-30 00:03:24,351 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:24] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:26,033 - __main__ - INFO - User: admin - Action: delete - File: New_Microsoft_Word_Document_1.docx
+2025-03-30 00:03:26,035 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:26] "[32mGET /delete/New_Microsoft_Word_Document_1.docx HTTP/1.1[0m" 302 -
+2025-03-30 00:03:26,041 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:26] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:28,351 - __main__ - INFO - User: admin - Action: delete - File: Small_business_cash_flow_forecast1_1_2_3_4.pdf
+2025-03-30 00:03:28,352 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:28] "[32mGET /delete/Small_business_cash_flow_forecast1_1_2_3_4.pdf HTTP/1.1[0m" 302 -
+2025-03-30 00:03:28,359 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:28] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:30,361 - __main__ - INFO - User: admin - Action: delete - File: Small_business_cash_flow_forecast1_1_2.pdf
+2025-03-30 00:03:30,362 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:30] "[32mGET /delete/Small_business_cash_flow_forecast1_1_2.pdf HTTP/1.1[0m" 302 -
+2025-03-30 00:03:30,369 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:30] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:32,212 - __main__ - INFO - User: admin - Action: delete - File: New_Microsoft_Word_Document_2_1.docx
+2025-03-30 00:03:32,213 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:32] "[32mGET /delete/New_Microsoft_Word_Document_2_1.docx HTTP/1.1[0m" 302 -
+2025-03-30 00:03:32,221 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:32] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:03:35,023 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:35] "GET /admin/upload HTTP/1.1" 200 -
+2025-03-30 00:03:54,585 - __main__ - ERROR - Upload error: (sqlite3.OperationalError) no such column: document_policies.policy_json
+[SQL: SELECT document_policies.id AS document_policies_id, document_policies.policy_json AS document_policies_policy_json, document_policies.applied_at AS document_policies_applied_at, document_policies.originator AS document_policies_originator, document_policies.document_type AS document_policies_document_type, document_policies.discipline AS document_policies_discipline, document_policies.building_code AS document_policies_building_code, document_policies.project_code AS document_policies_project_code, document_policies.revision_format AS document_policies_revision_format 
+FROM document_policies ORDER BY document_policies.applied_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: (1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 00:03:54,586 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:54] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-03-30 00:03:54,592 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:03:54] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:04:00,704 - app - ERROR - Exception on /admin/policy [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: document_policies.policy_json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 83, in decorated_function
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 513, in manage_policy
+    policies = DocumentPolicy.query.order_by(DocumentPolicy.applied_at.desc()).all()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: document_policies.policy_json
+[SQL: SELECT document_policies.id AS document_policies_id, document_policies.policy_json AS document_policies_policy_json, document_policies.applied_at AS document_policies_applied_at, document_policies.originator AS document_policies_originator, document_policies.document_type AS document_policies_document_type, document_policies.discipline AS document_policies_discipline, document_policies.building_code AS document_policies_building_code, document_policies.project_code AS document_policies_project_code, document_policies.revision_format AS document_policies_revision_format 
+FROM document_policies ORDER BY document_policies.applied_at DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 00:04:00,715 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 00:04:00,748 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:00] "[35m[1mGET /admin/policy HTTP/1.1[0m" 500 -
+2025-03-30 00:04:04,491 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:04] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 00:04:04,498 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:04] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:04:05,470 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:05] "GET /admin/users HTTP/1.1" 200 -
+2025-03-30 00:04:28,117 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:28] "[32mPOST /create-user HTTP/1.1[0m" 302 -
+2025-03-30 00:04:28,125 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:28] "GET /admin/users HTTP/1.1" 200 -
+2025-03-30 00:04:36,150 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:36] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 00:04:36,156 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:36] "GET /documents HTTP/1.1" 200 -
+2025-03-30 00:04:39,283 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:39] "GET /admin/upload HTTP/1.1" 200 -
+2025-03-30 00:04:51,948 - __main__ - ERROR - Upload error: (sqlite3.OperationalError) no such column: document_policies.policy_json
+[SQL: SELECT document_policies.id AS document_policies_id, document_policies.policy_json AS document_policies_policy_json, document_policies.applied_at AS document_policies_applied_at, document_policies.originator AS document_policies_originator, document_policies.document_type AS document_policies_document_type, document_policies.discipline AS document_policies_discipline, document_policies.building_code AS document_policies_building_code, document_policies.project_code AS document_policies_project_code, document_policies.revision_format AS document_policies_revision_format 
+FROM document_policies ORDER BY document_policies.applied_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: (1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 00:04:51,949 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:51] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-03-30 00:04:51,956 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 00:04:51] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:04:31,704 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 01:04:31,704 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 01:04:43,230 - app - ERROR - Exception on /login [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 526, in before_request
+    if (not current_user.is_authenticated and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:04:43,241 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 01:04:43,247 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:04:43] "[35m[1mGET /login?next=/ HTTP/1.1[0m" 500 -
+2025-03-30 01:04:43,494 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 526, in before_request
+    if (not current_user.is_authenticated and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1399, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 546, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 737, in update_template_context
+    context.update(func())
+                   ^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 405, in _user_context_processor
+    return dict(current_user=_get_user())
+                             ^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:04:47,318 - app - ERROR - Exception on /login [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 526, in before_request
+    if (not current_user.is_authenticated and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:04:47,321 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 01:04:47,323 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:04:47] "[35m[1mGET /login?next=/ HTTP/1.1[0m" 500 -
+2025-03-30 01:04:47,329 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 526, in before_request
+    if (not current_user.is_authenticated and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1399, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 546, in internal_server_error
+    return render_template('500.html'), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 737, in update_template_context
+    context.update(func())
+                   ^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 405, in _user_context_processor
+    return dict(current_user=_get_user())
+                             ^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 75, in load_user
+    return db.session.get(User, int(user_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1060, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3637, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3817, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:05:48,549 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 01:05:48,551 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 01:05:57,110 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:05:57] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 01:06:10,823 - app - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 439, in login
+    user = User.query.filter_by(username=username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('admin', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:06:10,837 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 01:06:10,840 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:10] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 01:06:14,312 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:14] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 01:06:14,317 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:14] "GET /login?next=http://127.0.0.1:5000/ HTTP/1.1" 200 -
+2025-03-30 01:06:23,600 - app - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 439, in login
+    user = User.query.filter_by(username=username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password, users.role AS users_role, users.first_name AS users_first_name, users.last_name AS users_last_name 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('admin', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-30 01:06:23,604 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 01:06:23,605 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:23] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 01:06:26,747 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:26] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 01:06:26,751 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:06:26] "GET /login?next=http://127.0.0.1:5000/ HTTP/1.1" 200 -
+2025-03-30 01:11:43,933 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2025-03-30 01:16:19,014 - flask_migrate - ERROR - Error: Directory migrations already exists and is not empty
+2025-03-30 01:21:01,046 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 01:21:01,046 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 01:21:06,842 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:21:06] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 01:21:13,487 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:21:13] "POST /login HTTP/1.1" 200 -
+2025-03-30 01:55:04,213 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 01:55:04,213 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 01:55:13,985 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:13] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 01:55:26,378 - app - INFO - User: admin - Action: login - File: None
+2025-03-30 01:55:26,381 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 01:55:26,414 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:26] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:55:30,713 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:30] "GET /admin/upload HTTP/1.1" 200 -
+2025-03-30 01:55:51,699 - app - INFO - User: admin - Action: upload - File: Small_business_cash_flow_forecast1_1_2_3_4.pdf
+2025-03-30 01:55:51,701 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:51] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-03-30 01:55:51,707 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:55:51] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:56:06,915 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:06] "GET /admin/upload HTTP/1.1" 200 -
+2025-03-30 01:56:19,832 - app - INFO - User: admin - Action: upload - File: New_Microsoft_Word_Document_2_1.docx
+2025-03-30 01:56:19,832 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:19] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-03-30 01:56:19,840 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:19] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:56:23,546 - app - ERROR - DOCX preview error: __init__() takes 1 positional argument but 2 were given
+2025-03-30 01:56:23,548 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:23] "[32mGET /preview/New_Microsoft_Word_Document_2_1.docx HTTP/1.1[0m" 302 -
+2025-03-30 01:56:23,555 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:23] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:56:29,271 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:29] "GET /preview/Small_business_cash_flow_forecast1_1_2_3_4.pdf HTTP/1.1" 200 -
+2025-03-30 01:56:35,396 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:35] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 01:56:35,403 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:35] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:56:36,845 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:36] "GET /admin/users HTTP/1.1" 200 -
+2025-03-30 01:56:41,772 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:56:41] "GET /admin/policy HTTP/1.1" 200 -
+2025-03-30 01:58:01,702 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:01] "[32mPOST /admin/policy HTTP/1.1[0m" 302 -
+2025-03-30 01:58:01,709 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:01] "GET /admin/policy HTTP/1.1" 200 -
+2025-03-30 01:58:10,886 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:10] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 01:58:10,892 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:10] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:58:12,368 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:12] "GET /admin/upload HTTP/1.1" 200 -
+2025-03-30 01:58:34,453 - app - INFO - User: admin - Action: upload - File: New_Microsoft_Excel_Worksheet_1.xlsx
+2025-03-30 01:58:34,455 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:34] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-03-30 01:58:34,462 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:58:34] "GET /documents HTTP/1.1" 200 -
+2025-03-30 01:59:04,661 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:59:04] "GET /admin/policy HTTP/1.1" 200 -
+2025-03-30 01:59:15,148 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:59:15] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 01:59:15,155 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 01:59:15] "GET /documents HTTP/1.1" 200 -
+2025-03-30 02:49:42,973 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 02:49:42,974 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 02:49:50,066 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:50] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 02:49:50,105 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:50] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-03-30 02:49:50,111 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:50] "GET /login?next=http://127.0.0.1:5000/favicon.ico HTTP/1.1" 200 -
+2025-03-30 02:49:58,827 - __main__ - INFO - User: admin - Action: login - File: None
+2025-03-30 02:49:58,828 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 02:49:58,894 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:58] "GET /documents HTTP/1.1" 200 -
+2025-03-30 02:49:58,947 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:49:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 02:50:03,898 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 02:50:03] "GET /admin/policy HTTP/1.1" 200 -
+2025-03-30 03:08:16,076 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 03:08:16,076 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 03:08:22,424 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:22] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 03:08:22,477 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:22,493 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:22,507 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:22] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:08:25,837 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:25] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 03:08:25,846 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:25,851 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:25,854 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:25] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:08:30,523 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:30,526 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:30,529 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:30] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:08:31,314 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:31,318 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:31,320 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:31] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:08:38,039 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:38] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 03:08:38,043 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:38,046 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:38,047 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:38] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:08:40,235 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:40] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 03:08:40,241 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 141, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:08:40,246 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:08:40,248 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:08:40] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:13:07,963 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 03:13:07,963 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 03:13:12,388 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:13:12] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 03:13:12,403 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:13:12,405 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:13:12,408 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:13:12] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:24:27,693 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 03:24:27,693 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 03:24:35,239 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:35] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 03:24:35,264 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:24:35,274 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:24:35,277 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:35] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:24:46,383 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:46] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 03:24:46,392 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:24:46,396 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:24:46,399 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:46] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:24:48,874 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:48] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 03:24:48,883 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:24:48,887 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:24:48,890 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:48] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 03:24:54,329 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:54] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 03:24:54,336 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 03:24:54,338 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 03:24:54,339 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 03:24:54] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 19:37:59,370 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.147:5000
+2025-03-30 19:37:59,370 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 19:38:03,741 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:03] "GET /login?next=/ HTTP/1.1" 200 -
+2025-03-30 19:38:03,778 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:03] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-03-30 19:38:03,782 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:03] "GET /login?next=http://127.0.0.1:5000/favicon.ico HTTP/1.1" 200 -
+2025-03-30 19:38:12,710 - __main__ - INFO - User: admin - Action: login - File: None
+2025-03-30 19:38:12,712 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 19:38:12,772 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 19:38:12,938 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 19:38:12,957 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:12] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 19:38:13,002 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 19:38:17,026 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:17] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 19:38:17,037 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 19:38:17,041 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 19:38:17,042 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:17] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 19:38:19,016 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:19] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 19:38:19,026 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 19:38:19,031 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 19:38:19,032 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:19] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 19:38:19,987 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:19] "[32mGET / HTTP/1.1[0m" 302 -
+2025-03-30 19:38:19,994 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 19:38:19,996 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 19:38:19,997 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:19] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-03-30 19:38:20,956 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:20] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-03-30 19:38:20,967 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\app.py", line 140, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 57, in top-level template code
+    <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'manage_policy'. Did you mean 'change_role' instead?
+2025-03-30 19:38:20,972 - __main__ - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-03-30 19:38:20,974 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 19:38:20] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
