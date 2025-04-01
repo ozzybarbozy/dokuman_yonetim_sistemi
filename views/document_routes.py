@@ -3,9 +3,10 @@ import math
 from datetime import datetime
 from flask import (
     Blueprint, render_template, request, redirect,
-    url_for, flash, send_from_directory, abort, current_app
+    url_for, flash, send_from_directory, abort
 )
 from flask_login import login_required, current_user
+from flask import current_app
 from werkzeug.utils import secure_filename
 from models import Document, DocumentSequence
 from extensions import db
@@ -97,12 +98,20 @@ def preview_file(filename):
     if file_ext in ['pdf', 'txt']:
         return send_from_directory(current_app.config['UPLOAD_FOLDER'], filename)
 
-    # DOCX, XLSX vb. için Google Docs Viewer ile yönlendirme
+    # DOCX, XLSX vb. için Google Docs Viewer ile yönlendirme (login olmadan erişilebilir hale getiriyoruz)
     if file_ext in ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx']:
-        file_url = url_for('documents.download_file', filename=filename, _external=True)
+        file_url = url_for('documents.public_download', filename=filename, _external=True)
         viewer_url = f"https://docs.google.com/gview?url={file_url}&embedded=true"
         return redirect(viewer_url)
 
     # Diğer desteklenmeyen uzantılar
     flash("Bu dosya türü için önizleme desteklenmiyor.", "error")
     return redirect(url_for('documents.documents'))
+
+@document_bp.route('/public_download/<filename>')
+def public_download(filename):
+    safe_filename = secure_filename(filename)
+    file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], safe_filename)
+    if not os.path.exists(file_path):
+        abort(404)
+    return send_from_directory(current_app.config['UPLOAD_FOLDER'], safe_filename)
