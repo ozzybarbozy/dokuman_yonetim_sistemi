@@ -3,12 +3,12 @@ services:
     name: dokuman-yonetim
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app  # ✅ app.py içindeki app objesi
     autoDeploy: true
     envVars:
       - key: FLASK_ENV
         value: production
       - key: SECRET_KEY
-        value: rastgele_bir_gizli_anahtar
+        value: 7f24d465e6513b72f6f3c54f98df7a6b
       - key: UPLOAD_FOLDER
         value: uploads
