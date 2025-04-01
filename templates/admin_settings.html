@@ -1,0 +1,82 @@
+<!-- templates/admin_settings.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yönetilebilir Seçenekler</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+
+  <!-- Geri Dön Butonu -->
+  <div class="mb-4">
+    <a href="{{ url_for('documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+  </div>
+
+  <!-- Flash Mesajları -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="mb-3">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% for model_key, items in data.items() %}
+    <div class="card mb-4">
+      <div class="card-header bg-info text-white">
+        <strong>{{ model_key.replace('_', ' ').title() }}</strong>
+      </div>
+      <div class="card-body">
+
+        <!-- Mevcut Kayıtlar -->
+        <ul class="list-group mb-3">
+          {% for item in items %}
+            <li class="list-group-item">
+              <form method="POST" action="{{ url_for('update_setting', model=model_key, item_id=item.id) }}" class="form-inline d-flex justify-content-between align-items-center">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="flex-fill d-flex">
+                  <input type="text" name="code" value="{{ item.code }}" class="form-control mr-2" style="width: 120px;" required>
+                  <input type="text" name="description" value="{{ item.description }}" class="form-control mr-2 flex-grow-1" required>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-sm btn-primary mr-2">📝</button>
+              </form>
+              <form method="POST" action="{{ url_for('delete_setting', model=model_key, item_id=item.id) }}" style="display: inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğine emin misin?')">❌</button>
+              </form>
+                </div>
+            </li>
+          {% else %}
+            <li class="list-group-item text-muted">Henüz veri yok.</li>
+          {% endfor %}
+        </ul>
+
+        <!-- Yeni Kayıt Ekleme Formu -->
+        <form method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="model" value="{{ model_key }}">
+          <div class="form-row">
+            <div class="col">
+              <input type="text" name="code" class="form-control" placeholder="Kod" required>
+            </div>
+            <div class="col">
+              <input type="text" name="description" class="form-control" placeholder="Açıklama" required>
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-success" type="submit">Ekle</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
+</body>
+</html>

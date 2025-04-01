@@ -8,6 +8,10 @@
 </head>
 <body>
 <div class="container-fluid">
+    <!-- Navigasyon Butonları -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+        <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Çıkış Yap</a>    </div>
     <div class="row">
         <!-- Sol sütunda Yeni Kullanıcı Ekle formu -->
         <div class="col-md-3">
@@ -16,8 +20,7 @@
                     <h5 class="mb-0">Yeni Kullanıcı Ekle</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url_for('create_user_route') }}" method="post">
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <form action="{{ url_for('users.create_user_route') }}" method="post">                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <label for="first_name">Ad</label>
                             <input type="text" name="first_name" class="form-control">
@@ -87,8 +90,7 @@
                         <td>{{ u['role'] }}</td>
                         <td>
                             <!-- Rol Değiştir Butonu -->
-                            <form action="{{ url_for('change_role') }}" method="post" style="display:inline;">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <form action="{{ url_for('users.change_role') }}" method="post" style="display:inline;">                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="user_id" value="{{ u['id'] }}">
                                 <select name="role" class="form-control d-inline-block" style="width:auto;">
                                     <option value="admin" {% if u['role'] == 'admin' %}selected{% endif %}>admin</option>
@@ -97,8 +99,7 @@
                                 <button type="submit" class="btn btn-sm btn-warning">Değiştir</button>
                             </form>
                             <!-- Kullanıcı Sil Butonu -->
-                            <form action="{{ url_for('delete_user') }}" method="post" style="display:inline;">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <form action="{{ url_for('users.delete_user') }}" method="post" style="display:inline;">                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="user_id" value="{{ u['id'] }}">
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
                                     Sil

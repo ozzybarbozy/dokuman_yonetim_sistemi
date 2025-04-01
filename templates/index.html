@@ -8,9 +8,8 @@
     .admin-menu h4 {
       margin-top: 0;
     }
-    /* Yeni eklenen sınıf: admin-card */
     .admin-card {
-      margin-top: 30px;  /* Bu değeri başlığın hizasına göre ayarlayabilirsiniz */
+      margin-top: 30px;
     }
     .admin-menu a.btn {
       display: block;
@@ -43,26 +42,27 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <!-- Sol Taraftaki Sütun -->
       <div class="col-md-3">
         {% if current_user.is_authenticated and current_user.role == 'admin' %}
-          <!-- admin-menu kartı artık "admin-card" sınıfıyla aşağı kaydırılmış -->
           <div class="card mb-3 admin-card">
             <div class="card-header">
               <h5 class="mb-0">Admin Menüsü</h5>
             </div>
             <div class="card-body">
-              <a href="{{ url_for('admin_upload_form') }}" class="btn btn-primary btn-block mb-2">Dosya Yükle</a>
-              <a href="{{ url_for('admin_users') }}" class="btn btn-secondary btn-block mb-2">Kullanıcı Yönetimi</a>
-              <a href="{{ url_for('manage_policy') }}" class="btn btn-info btn-block mb-2">Doküman Politikası Yönetimi</a>
+              <a href="{{ url_for('upload.admin_upload_form') }}" class="btn btn-primary btn-block mb-2">Dosya Yükle</a>
+              <a href="{{ url_for('users.admin_users') }}" class="btn btn-secondary btn-block mb-2">Kullanıcı Yönetimi</a>
+            </div>
+          </div>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+          <div class="card">
+            <div class="card-body">
+              <a href="{{ url_for('auth.logout') }}" class="btn btn-danger btn-block">Çıkış Yap</a>
             </div>
           </div>
         {% endif %}
       </div>
-      
-      <!-- Sağ Taraftaki Sütun: Doküman Listesi -->
       <div class="col-md-9">
-        <!-- Flash Mesajları -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             <div class="flashes">
@@ -78,14 +78,14 @@
 
         <h1 class="mb-4">Doküman Yönetim Sistemi</h1>
 
-        <!-- Doküman Listesi -->
         <h2 class="mb-3">Dokümanlar</h2>
         {% if documents and documents|length > 0 %}
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead class="thead-light">
                 <tr>
-                  <th>Dosya Adı</th>
+                  <th>Doküman No</th>
+                  <th>Uzantı</th>
                   <th>Açıklama</th>
                   <th>Yüklenme Tarihi</th>
                   <th>İşlemler</th>
@@ -94,14 +94,15 @@
               <tbody>
                 {% for doc in documents %}
                   <tr>
-                    <td>{{ doc['filename'] }}</td>
+                    <td>{{ doc.document_number }}</td>
+                    <td>{{ doc.filename.rsplit('.', 1)[-1]|upper }}</td>
                     <td>{{ doc['description'] }}</td>
-                    <td>{{ doc['upload_date'] }}</td>
+                    <td>{{ doc.upload_date.strftime('%Y-%m-%d %H:%M') }}</td>
                     <td>
-                      <a href="{{ url_for('download_file', filename=doc['filename']) }}" class="btn btn-sm btn-success mr-2">İndir</a>
-                      <a href="{{ url_for('preview_file', filename=doc['filename']) }}" class="btn btn-sm btn-info mr-2">Önizle</a>
+                      <a href="{{ url_for('documents.download_file', filename=doc['filename']) }}" class="btn btn-sm btn-success mr-2">İndir</a>
+                      <a href="{{ url_for('preview.preview_file', filename=doc['filename']) }}" class="btn btn-sm btn-info mr-2">Önizle</a>
                       {% if current_user.is_authenticated and current_user.role == 'admin' %}
-                        <a href="{{ url_for('delete_file', filename=doc['filename']) }}" class="btn btn-sm btn-danger" onclick="return confirm('Bu dosyayı silmek istediğinize emin misiniz?')">Sil</a>
+                        <a href="{{ url_for('documents.delete_file', filename=doc['filename']) }}" class="btn btn-sm btn-danger" onclick="return confirm('Bu dosyayı silmek istediğinize emin misiniz?')">Sil</a>
                       {% endif %}
                     </td>
                   </tr>
@@ -115,20 +116,19 @@
           </div>
         {% endif %}
 
-        <!-- Sayfalama (Pagination) -->
         {% if total_pages > 1 %}
           <nav aria-label="Sayfalama">
             <ul class="pagination">
               <li class="page-item {% if current_page <= 1 %}disabled{% endif %}">
-                <a class="page-link" href="{{ url_for('documents', query=search_query, filter_category=filter_category, per_page=per_page, page=current_page-1) }}">‹</a>
+                <a class="page-link" href="{{ url_for('documents.documents', query=search_query, filter_category=filter_category, per_page=per_page, page=current_page-1) }}">‹</a>
               </li>
               {% for p in range(1, total_pages+1) %}
                 <li class="page-item {% if p == current_page %}active{% endif %}">
-                  <a class="page-link" href="{{ url_for('documents', query=search_query, filter_category=filter_category, per_page=per_page, page=p) }}">{{ p }}</a>
+                  <a class="page-link" href="{{ url_for('documents.documents', query=search_query, filter_category=filter_category, per_page=per_page, page=p) }}">{{ p }}</a>
                 </li>
               {% endfor %}
               <li class="page-item {% if current_page >= total_pages %}disabled{% endif %}">
-                <a class="page-link" href="{{ url_for('documents', query=search_query, filter_category=filter_category, per_page=per_page, page=current_page+1) }}">›</a>
+                <a class="page-link" href="{{ url_for('documents.documents', query=search_query, filter_category=filter_category, per_page=per_page, page=current_page+1) }}">›</a>
               </li>
             </ul>
           </nav>

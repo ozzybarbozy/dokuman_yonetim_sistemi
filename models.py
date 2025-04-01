@@ -15,7 +15,7 @@ class Document(db.Model):
     __tablename__ = 'documents'
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(255), nullable=False)
-    document_number = db.Column(db.String(50))
+    document_number = db.Column(db.String(100), nullable=True)
     description = db.Column(db.Text)
     upload_date = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
@@ -35,3 +35,27 @@ class DocumentSequence(db.Model):
     __table_args__ = (
         db.UniqueConstraint('originator', 'document_type', 'discipline', 'building_code', name='uq_doc_seq'),
     )
+class DocumentType(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(20), unique=True, nullable=False)       # Örnek: DT1
+    description = db.Column(db.String(100), nullable=False)            # Örnek: Drawing Type 1
+
+class Originator(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(20), unique=True, nullable=False)
+    description = db.Column(db.String(100), nullable=False)
+
+class Discipline(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(20), unique=True, nullable=False)
+    description = db.Column(db.String(100), nullable=False)
+
+class BuildingCode(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(20), unique=True, nullable=False)
+    description = db.Column(db.String(100), nullable=False)
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(20), unique=True, nullable=False)
+    description = db.Column(db.String(100), nullable=False)
