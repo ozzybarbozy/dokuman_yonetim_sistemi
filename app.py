@@ -150,6 +150,9 @@ app.register_blueprint(users_bp)
 from views.preview_routes import preview_bp
 app.register_blueprint(preview_bp)
 
+from views.public_routes import public_bp
+app.register_blueprint(public_bp)
+
 # === Favicon ===
 @app.route('/favicon.ico')
 def favicon():
