@@ -1,120 +1,61 @@
-<!-- templates/users.html -->
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>Kullanıcı Yönetimi</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container-fluid">
-    <!-- Navigasyon Butonları -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
-        <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Çıkış Yap</a>    </div>
-    <div class="row">
-        <!-- Sol sütunda Yeni Kullanıcı Ekle formu -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h5 class="mb-0">Yeni Kullanıcı Ekle</h5>
-                </div>
-                <div class="card-body">
-                    <form action="{{ url_for('users.create_user_route') }}" method="post">                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                        <div class="form-group">
-                            <label for="first_name">Ad</label>
-                            <input type="text" name="first_name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="last_name">Soyad</label>
-                            <input type="text" name="last_name" class="form-control">
-                        </div>                      
-                        <div class="form-group">
-                            <label for="username">Kullanıcı Adı</label>
-                            <input type="text" name="username" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Şifre</label>
-                            <input type="password" name="password" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Rol</label>
-                            <select name="role" class="form-control">
-                                <option value="admin">admin</option>
-                                <option value="user" selected>user</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block">Kaydet</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+{% extends "base.html" %}
 
-        <!-- Sağ sütunda kullanıcı listesi -->
-        <div class="col-md-9">
-            <!-- Flash mesajları -->
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    <div class="flashes">
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}">
-                                {{ message }}
-                                <span onclick="this.parentElement.style.display='none'">&times;</span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endwith %}
+{% block title %}Kullanıcı Yönetimi{% endblock %}
 
-            <h1>Kullanıcı Listesi</h1>
+{% block content %}
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4>👥 Kullanıcı Yönetimi</h4>
+    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Geri Dön</a>
+  </div>
 
-            {% if users and users|length > 0 %}
-            <table class="table table-bordered table-hover">
-                <thead class="thead-light">
-                    <tr>
-                        <th>ID</th>
-                        <th>Kullanıcı Adı</th>
-                        <th>Ad</th>
-                        <th>Soyad</th>
-                        <th>Rol</th>
-                        <th>İşlemler</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for u in users %}
-                    <tr>
-                        <td>{{ u['id'] }}</td>
-                        <td>{{ u['username'] }}</td>
-                        <td>{{ u['first_name'] }}</td>
-                        <td>{{ u['last_name'] }}</td>
-                        <td>{{ u['role'] }}</td>
-                        <td>
-                            <!-- Rol Değiştir Butonu -->
-                            <form action="{{ url_for('users.change_role') }}" method="post" style="display:inline;">                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <input type="hidden" name="user_id" value="{{ u['id'] }}">
-                                <select name="role" class="form-control d-inline-block" style="width:auto;">
-                                    <option value="admin" {% if u['role'] == 'admin' %}selected{% endif %}>admin</option>
-                                    <option value="user" {% if u['role'] == 'user' %}selected{% endif %}>user</option>
-                                </select>
-                                <button type="submit" class="btn btn-sm btn-warning">Değiştir</button>
-                            </form>
-                            <!-- Kullanıcı Sil Butonu -->
-                            <form action="{{ url_for('users.delete_user') }}" method="post" style="display:inline;">                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <input type="hidden" name="user_id" value="{{ u['id'] }}">
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
-                                    Sil
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            {% else %}
-            <div class="alert alert-warning">Kullanıcı bulunamadı.</div>
+  <!-- Flash mesajlar -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="mb-3">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Kullanıcılar tablosu -->
+  <div class="table-responsive card p-3 shadow">
+    <table class="table table-hover table-bordered text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Kullanıcı Adı</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <a href="{{ url_for('users.edit_user', user_id=user.id) }}" class="btn btn-sm btn-primary">📝</a>
+            {% if user.id != current_user.id %}
+            <form method="POST" action="{{ url_for('users.delete_user', user_id=user.id) }}" style="display:inline;" onsubmit="return confirm('Bu kullanıcıyı silmek istediğine emin misin?');">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <button type="submit" class="btn btn-sm btn-danger">❌</button>
+            </form>
             {% endif %}
-        </div>
-    </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="5" class="text-muted">Henüz kullanıcı yok.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
-</body>
-</html>
+{% endblock %}

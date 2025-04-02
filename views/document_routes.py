@@ -40,12 +40,13 @@ def documents():
                      .all()
     total_pages = math.ceil(total_docs / per_page) if total_docs else 1
     return render_template('index.html',
-                           documents=documents,
-                           search_query=search_query,
-                           filter_category=filter_category,
-                           current_page=page,
-                           total_pages=total_pages,
-                           per_page=per_page)
+                        documents=documents,
+                        search_query=search_query,
+                        filter_category=filter_category,
+                        current_page=page,
+                        total_pages=total_pages,
+                        per_page=per_page,
+                        total_docs=total_docs)  # 🧩 Bunu ekle!
 
 @document_bp.route('/download/<filename>')
 @login_required

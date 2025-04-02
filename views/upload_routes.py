@@ -41,7 +41,7 @@ def admin_upload_form():
         categories=categories
     )
 
-@upload_bp.route('/upload', methods=['POST'])
+@upload_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload_file():
     if current_user.role != 'admin':

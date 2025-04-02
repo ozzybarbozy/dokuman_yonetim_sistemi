@@ -1,125 +1,52 @@
-<!-- templates/upload.html -->
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Doküman Yükleme</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container mt-5">
+{% extends "base.html" %}
 
-  <div class="d-flex justify-content-start mb-4">
-    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Doküman Listesine Dön</a>
+{% block title %}Dosya Yükle{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 700px;">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4>📤 Yeni Dosya Yükle</h4>
+    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Geri Dön</a>
   </div>
 
+  <!-- Flash mesajlar -->
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <div class="flashes mb-3">
+      <div class="mb-3">
         {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">
-            {{ message }}
-            <span onclick="this.parentElement.style.display='none'" style="cursor: pointer;">&times;</span>
-          </div>
+          <div class="alert alert-{{ category }}">{{ message }}</div>
         {% endfor %}
       </div>
     {% endif %}
   {% endwith %}
 
-  <div class="card shadow-sm">
-    <div class="card-header bg-primary text-white">
-      <h5 class="mb-0">Yeni Doküman Yükle</h5>
-    </div>
-    <div class="card-body">
-      <form action="{{ url_for('upload.upload_file') }}" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <!-- Dosya yükleme formu -->
+  <div class="card shadow p-4">
+    <form method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-        <div class="form-group">
-          <label for="file">Dosya Seçin:</label>
-          <input type="file" class="form-control-file" name="file" id="file" required
-                 accept=".pdf,.docx,.txt,.xlsx,.dwg,.jpg,.jpeg,.png">
-          <small class="form-text text-muted">
-            Geçerli dosya adı formatı: <strong>KLN-SPP2-ITP-CV-ES02-001_R01.pdf</strong><br>
-            Format doğruysa alanlar otomatik doldurulacaktır.
-          </small>
-        </div>
+      <div class="form-group">
+        <label for="file">Dosya Seç (.pdf, .docx, .xlsx vb.)</label>
+        <input type="file" name="file" class="form-control-file" required>
+      </div>
 
-        <div class="form-group">
-          <label for="description">Açıklama:</label>
-          <input type="text" class="form-control" name="description" id="description"
-                 placeholder="Dosya açıklaması girin">
-        </div>
+      <div class="form-group">
+        <label for="description">Açıklama</label>
+        <input type="text" name="description" class="form-control" placeholder="Kısa açıklama girin..." required>
+      </div>
 
-        <div id="manualFields">
-          <div class="form-group">
-            <label for="originator">Originator:</label>
-            <select name="originator" id="originator" class="form-control">
-              {% for item in originators %}
-                <option value="{{ item.code }}">{{ item.description }} ({{ item.code }})</option>
-              {% endfor %}
-            </select>
-          </div>
+      <div class="form-group">
+        <label for="category">Kategori</label>
+        <select name="category" class="form-control" required>
+          <option value="">Kategori Seçin</option>
+          {% for category in categories %}
+            <option value="{{ category.code }}">{{ category.description }}</option>
+          {% endfor %}
+        </select>
+      </div>
 
-          <div class="form-group">
-            <label for="document_type">Document Type:</label>
-            <select name="document_type" id="document_type" class="form-control">
-              {% for item in document_types %}
-                <option value="{{ item.code }}">{{ item.description }} ({{ item.code }})</option>
-              {% endfor %}
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="discipline">Discipline:</label>
-            <select name="discipline" id="discipline" class="form-control">
-              {% for item in disciplines %}
-                <option value="{{ item.code }}">{{ item.description }} ({{ item.code }})</option>
-              {% endfor %}
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="building_code">Building Code:</label>
-            <select name="building_code" id="building_code" class="form-control">
-              {% for item in building_codes %}
-                <option value="{{ item.code }}">{{ item.description }} ({{ item.code }})</option>
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="category">Kategori:</label>
-          <select name="category" id="category" class="form-control">
-            {% for item in categories %}
-              <option value="{{ item.code }}">{{ item.description }} ({{ item.code }})</option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Yükle</button>
-      </form>
-    </div>
+      <button type="submit" class="btn btn-success btn-block">Yükle</button>
+    </form>
   </div>
 </div>
-
-<script>
-document.getElementById('file').addEventListener('change', function () {
-  const manualFields = document.getElementById('manualFields');
-  const file = this.files[0];
-
-  if (!file) {
-    manualFields.style.display = 'block';
-    return;
-  }
-
-  const name = file.name.split('.')[0];
-  const parts = name.split('-');
-
-  const isValid = parts.length === 6 && parts[5].includes('_');
-
-  manualFields.style.display = isValid ? 'none' : 'block';
-});
-</script>
-</body>
-</html>
+{% endblock %}

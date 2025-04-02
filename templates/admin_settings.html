@@ -1,17 +1,13 @@
-<!-- templates/admin_settings.html -->
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Yönetilebilir Seçenekler</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container mt-5">
+{% extends 'base.html' %}
 
-  <!-- Geri Dön Butonu -->
+{% block title %}Yönetim Ayarları{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+  <!-- Geri Dön -->
   <div class="mb-4">
-    <a href="{{ url_for('documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
   </div>
 
   <!-- Flash Mesajları -->
@@ -26,57 +22,106 @@
   {% endwith %}
 
   {% for model_key, items in data.items() %}
-    <div class="card mb-4">
-      <div class="card-header bg-info text-white">
-        <strong>{{ model_key.replace('_', ' ').title() }}</strong>
+    <div class="card mb-3">
+      <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+        <div><i class="fas fa-cog mr-2"></i> {{ model_key.replace('_', ' ').title() }}</div>
+        <button class="btn btn-sm btn-light" type="button" data-toggle="collapse" data-target="#collapse-{{ model_key }}">
+          Aç / Kapat
+        </button>
       </div>
-      <div class="card-body">
+      <div id="collapse-{{ model_key }}" class="collapse show">
+        <div class="card-body">
 
-        <!-- Mevcut Kayıtlar -->
-        <ul class="list-group mb-3">
-          {% for item in items %}
-            <li class="list-group-item">
-              <form method="POST" action="{{ url_for('update_setting', model=model_key, item_id=item.id) }}" class="form-inline d-flex justify-content-between align-items-center">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <div class="flex-fill d-flex">
-                  <input type="text" name="code" value="{{ item.code }}" class="form-control mr-2" style="width: 120px;" required>
-                  <input type="text" name="description" value="{{ item.description }}" class="form-control mr-2 flex-grow-1" required>
-                </div>
-                <div>
-                  <button type="submit" class="btn btn-sm btn-primary mr-2">📝</button>
-              </form>
-              <form method="POST" action="{{ url_for('delete_setting', model=model_key, item_id=item.id) }}" style="display: inline;">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğine emin misin?')">❌</button>
-              </form>
-                </div>
-            </li>
-          {% else %}
-            <li class="list-group-item text-muted">Henüz veri yok.</li>
-          {% endfor %}
-        </ul>
-
-        <!-- Yeni Kayıt Ekleme Formu -->
-        <form method="POST">
-          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-          <input type="hidden" name="model" value="{{ model_key }}">
-          <div class="form-row">
-            <div class="col">
-              <input type="text" name="code" class="form-control" placeholder="Kod" required>
-            </div>
-            <div class="col">
-              <input type="text" name="description" class="form-control" placeholder="Açıklama" required>
-            </div>
-            <div class="col-auto">
-              <button class="btn btn-success" type="submit">Ekle</button>
-            </div>
+          <div class="mb-2 text-muted">Toplam: {{ items | length }} kayıt</div>
+          
+          <!-- Tümünü Aç/Kapat Butonu -->
+          <div class="text-right mb-3">
+            <button class="btn btn-outline-secondary" onclick="toggleAllAccordions()">🔄 Tümünü Aç/Kapat</button>
           </div>
-        </form>
 
+          <script>
+            function toggleAllAccordions() {
+              document.querySelectorAll('.collapse').forEach(el => {
+                const isShown = el.classList.contains('show');
+                el.classList.toggle('show', !isShown);
+              });
+            }
+          </script>
+
+          <!-- Mevcut Kayıtlar -->
+          <ul class="list-group mb-3">
+            {% for item in items %}
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <form method="POST" action="{{ url_for('admin_settings.update_setting', model=model_key, item_id=item.id) }}" class="form-inline flex-grow-1">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <input type="text" name="code" value="{{ item.code }}" class="form-control mr-2" style="width: 120px;" required>
+                  <input type="text" name="description" value="{{ item.description }}" class="form-control flex-grow-1" required>
+                  <button type="submit" class="btn btn-sm btn-primary ml-2">📝</button>
+                </form>
+                <button class="btn btn-sm btn-outline-danger ml-2" onclick="confirmDelete('{{ url_for('admin_settings.delete_setting', model=model_key, item_id=item.id) }}')">🗑</button>
+              </li>
+            {% else %}
+              <li class="list-group-item text-muted">Henüz veri yok.</li>
+            {% endfor %}
+          </ul>
+
+          <!-- Yeni Kayıt Ekleme -->
+          <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="model" value="{{ model_key }}">
+            <div class="form-row">
+              <div class="col">
+                <input type="text" name="code" class="form-control" placeholder="Kod" required>
+              </div>
+              <div class="col">
+                <input type="text" name="description" class="form-control" placeholder="Açıklama" required>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-success" type="submit">Ekle</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
       </div>
     </div>
   {% endfor %}
-
 </div>
-</body>
-</html>
+
+<!-- 🛑 Onay Modali -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Silme Onayı</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">Bu kaydı silmek istediğinizden emin misiniz?</div>
+      <div class="modal-footer">
+        <form id="confirmDeleteForm" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit" class="btn btn-danger">Evet, Sil</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function confirmDelete(url) {
+    const form = document.getElementById('confirmDeleteForm');
+    form.action = url;
+    $('#deleteModal').modal('show');
+  }
+   // Flash mesajları 4 saniye sonra otomatik gizle
+   setTimeout(() => {
+    document.querySelectorAll('.alert').forEach(el => el.remove());
+  }, 4000);
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}

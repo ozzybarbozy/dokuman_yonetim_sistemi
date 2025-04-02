@@ -5517,3 +5517,1058 @@ NameError: name 'app' is not defined
 2025-04-01 23:23:29,203 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 23:23:29] "GET /documents HTTP/1.1" 200 -
 2025-04-01 23:23:32,260 - app - INFO - User: admin - Action: download - File: PRO-SPP2-IDF-ME-GN00-001_R00.xlsx
 2025-04-01 23:23:32,282 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2025 23:23:32] "[36mGET /download/PRO-SPP2-IDF-ME-GN00-001_R00.xlsx HTTP/1.1[0m" 304 -
+2025-04-02 03:25:56,683 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 03:25:56,684 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 03:26:01,747 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:01] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 03:26:09,301 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 03:26:09,301 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 03:26:09,376 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:09] "GET /documents HTTP/1.1" 200 -
+2025-04-02 03:26:12,832 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 14, in top-level template code
+    <a href="{{ url_for('documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'documents'. Did you mean 'documents.documents' instead?
+2025-04-02 03:26:12,951 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 03:26:12,954 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:12] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 03:26:14,621 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:14] "GET /documents HTTP/1.1" 200 -
+2025-04-02 03:26:16,157 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 14, in top-level template code
+    <a href="{{ url_for('documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'documents'. Did you mean 'documents.documents' instead?
+2025-04-02 03:26:16,164 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 03:26:16,164 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:16] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 03:26:17,838 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 03:26:17] "GET /documents HTTP/1.1" 200 -
+2025-04-02 09:47:52,942 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 09:47:52,943 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 09:47:58,488 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:47:58] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 09:48:06,128 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 09:48:06,134 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:48:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 09:48:06,196 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:48:06] "GET /documents HTTP/1.1" 200 -
+2025-04-02 09:48:10,872 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 14, in top-level template code
+    <a href="{{ url_for('documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'documents'. Did you mean 'documents.documents' instead?
+2025-04-02 09:48:11,043 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 09:48:11,065 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:48:11] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 09:53:22,115 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:22] "GET /documents HTTP/1.1" 200 -
+2025-04-02 09:53:23,550 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 14, in top-level template code
+    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'documents'. Did you mean 'documents.documents' instead?
+2025-04-02 09:53:23,570 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 09:53:23,572 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:23] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 09:53:24,825 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:24] "GET /documents HTTP/1.1" 200 -
+2025-04-02 09:53:26,160 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 09:53:26,164 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 09:53:26,168 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:26] "GET /login HTTP/1.1" 200 -
+2025-04-02 09:53:35,890 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 09:53:35,891 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 09:53:35,899 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:35] "GET /documents HTTP/1.1" 200 -
+2025-04-02 09:53:37,006 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 14, in top-level template code
+    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Ana Sayfa'ya Dön</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'documents'. Did you mean 'documents.documents' instead?
+2025-04-02 09:53:37,009 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 09:53:37,012 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:37] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 09:53:46,863 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 09:53:46,863 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 09:53:51,463 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 39, in top-level template code
+    <form method="POST" action="{{ url_for('update_setting', model=model_key, item_id=item.id) }}" class="form-inline d-flex justify-content-between align-items-center">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'update_setting' with values ['item_id', 'model']. Did you mean 'admin_settings.update_setting' instead?
+2025-04-02 09:53:51,469 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 09:53:51,471 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:53:51] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 10:26:35,564 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 39, in top-level template code
+    <form method="POST" action="{{ url_for('update_setting', model=model_key, item_id=item.id) }}" class="form-inline d-flex justify-content-between align-items-center">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'update_setting' with values ['item_id', 'model']. Did you mean 'admin_settings.update_setting' instead?
+2025-04-02 10:26:35,570 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 10:26:35,572 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 10:26:35] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 10:26:36,567 - app - ERROR - Exception on /admin/settings [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\admin_settings_routes.py", line 47, in admin_settings
+    return render_template('admin_settings.html', data=all_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\admin_settings.html", line 39, in top-level template code
+    <form method="POST" action="{{ url_for('update_setting', model=model_key, item_id=item.id) }}" class="form-inline d-flex justify-content-between align-items-center">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'update_setting' with values ['item_id', 'model']. Did you mean 'admin_settings.update_setting' instead?
+2025-04-02 10:26:36,572 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 10:26:36,576 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 10:26:36] "[35m[1mGET /admin/settings HTTP/1.1[0m" 500 -
+2025-04-02 11:05:47,669 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 11:05:47,671 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 11:05:57,131 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:05:57] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 11:06:06,161 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 11:06:06,173 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:06:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 11:06:06,288 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:06:06] "GET /documents HTTP/1.1" 200 -
+2025-04-02 11:06:10,809 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:06:10] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 11:06:59,217 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:06:59] "GET /documents HTTP/1.1" 200 -
+2025-04-02 11:55:41,549 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 11:55:41,550 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 11:55:53,054 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:55:53] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 11:55:53,154 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:55:53] "GET /documents HTTP/1.1" 200 -
+2025-04-02 11:55:56,023 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:55:56] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 11:56:10,099 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 11:56:10] "GET /documents HTTP/1.1" 200 -
+2025-04-02 16:07:34,144 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 16:07:34,144 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 16:07:38,973 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:38] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 16:07:39,026 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:39] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-04-02 16:07:39,032 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:39] "GET /login?next=http://127.0.0.1:5000/favicon.ico HTTP/1.1" 200 -
+2025-04-02 16:07:46,761 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 16:07:46,764 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 16:07:46,848 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:46] "GET /documents HTTP/1.1" 200 -
+2025-04-02 16:07:46,904 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:07:46] "GET /favicon.ico HTTP/1.1" 200 -
+2025-04-02 16:08:17,702 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:08:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 16:08:17,712 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:08:17] "GET /documents HTTP/1.1" 200 -
+2025-04-02 16:08:25,398 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 16:08:25,400 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:08:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 16:08:25,407 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:08:25] "GET /login HTTP/1.1" 200 -
+2025-04-02 16:27:16,157 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 16:27:16,157 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 16:29:12,944 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:29:12] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 16:29:19,017 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 16:29:19,018 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:29:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 16:29:19,058 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 50, in top-level template code
+    {{ super() }}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'super' is undefined
+2025-04-02 16:29:19,132 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 16:29:19,148 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 16:29:19] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 21:10:45,869 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 21:10:45,869 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 21:10:52,136 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:10:52] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 21:11:00,967 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 21:11:00,979 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 21:11:01,014 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:01] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:11:09,525 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:09] "GET /documents?query=&filter_category=Genel HTTP/1.1" 200 -
+2025-04-02 21:11:12,391 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:12] "GET /documents?query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:11:38,878 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:38] "GET /documents?query=deneme&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:11:42,924 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:42] "GET /documents?query=deneme&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:11:46,831 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:11:46] "GET /documents?query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:13:10,397 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:13:10] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:14:51,629 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:14:51] "GET /preview/KLN-SPP2-JSA-EL-ES02-001_R01.pdf HTTP/1.1" 200 -
+2025-04-02 21:15:02,916 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:15:02] "[36mGET /preview/Small_business_cash_flow_forecast1_1_2_3_4_5.pdf HTTP/1.1[0m" 304 -
+2025-04-02 21:15:06,771 - app - INFO - User: admin - Action: download - File: Small_business_cash_flow_forecast1_1_2_3_4_5.pdf
+2025-04-02 21:15:06,774 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:15:06] "GET /download/Small_business_cash_flow_forecast1_1_2_3_4_5.pdf HTTP/1.1" 200 -
+2025-04-02 21:18:01,205 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:01] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:18:27,365 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:27] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:18:35,620 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:35] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 21:18:48,243 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:48] "GET /documents?query=&filter_category=Teknik HTTP/1.1" 200 -
+2025-04-02 21:18:50,122 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:50] "GET /documents?page=1&query=&filter_category=Teknik HTTP/1.1" 200 -
+2025-04-02 21:18:56,332 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:18:56] "GET /documents?query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:19:22,073 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:19:22] "[33mGET /users HTTP/1.1[0m" 404 -
+2025-04-02 21:23:33,989 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:23:33] "[32mGET /preview/PRO-SPP2-IDF-ME-GN00-001_R00.xlsx HTTP/1.1[0m" 302 -
+2025-04-02 21:23:42,916 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:23:42] "[36mGET /preview/KLN-SPP2-JSA-ME-ES04-001_R00.txt HTTP/1.1[0m" 304 -
+2025-04-02 21:23:48,370 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:23:48] "[32mGET /preview/PRO-SPP2-MES-ME-ES02-001_R00.docx HTTP/1.1[0m" 302 -
+2025-04-02 21:32:41,406 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 21:32:41,407 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 21:32:48,063 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:32:48] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 21:32:48,116 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 10, in block 'content'
+    <a href="{{ url_for('upload.upload') }}" class="btn btn-success ml-2">📤 Yeni Doküman Yükle</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload.upload'. Did you mean 'upload.upload_file' instead?
+2025-04-02 21:32:48,192 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 21:32:48,202 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:32:48] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 21:32:50,941 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 10, in block 'content'
+    <a href="{{ url_for('upload.upload') }}" class="btn btn-success ml-2">📤 Yeni Doküman Yükle</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload.upload'. Did you mean 'upload.upload_file' instead?
+2025-04-02 21:32:50,946 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 21:32:50,948 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:32:50] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 21:32:51,550 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 10, in block 'content'
+    <a href="{{ url_for('upload.upload') }}" class="btn btn-success ml-2">📤 Yeni Doküman Yükle</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload.upload'. Did you mean 'upload.upload_file' instead?
+2025-04-02 21:32:51,555 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 21:32:51,558 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:32:51] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 21:36:04,287 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 21:36:04,287 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 21:36:18,177 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:36:18] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 21:36:18,260 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:36:18] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:36:40,416 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:36:40] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:36:55,235 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:36:55] "[32mPOST /admin/settings/update/originator/4 HTTP/1.1[0m" 302 -
+2025-04-02 21:36:55,263 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:36:55] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:37:20,109 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:20] "[32mPOST /admin/settings HTTP/1.1[0m" 302 -
+2025-04-02 21:37:20,140 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:20] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:37:41,422 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:41] "[32mPOST /admin/settings/update/originator/6 HTTP/1.1[0m" 302 -
+2025-04-02 21:37:41,446 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:41] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:37:55,174 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:55] "[32mPOST /admin/settings/update/originator/6 HTTP/1.1[0m" 302 -
+2025-04-02 21:37:55,220 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:37:55] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:39:48,899 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:39:48] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:40:01,039 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:40:01] "GET /documents?query=deneme&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:40:02,678 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:40:02] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:40:08,411 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:40:08] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 21:41:03,377 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:41:03] "GET /documents?query=deneme&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:41:41,925 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:41:41] "[36mGET /preview/KLN-SPP2-JSA-ME-ES04-001_R00.txt HTTP/1.1[0m" 304 -
+2025-04-02 21:41:48,518 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:41:48] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:42:11,348 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:42:11] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:42:14,770 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:42:14] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:42:17,855 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:42:17] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:42:19,096 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:42:19] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:51:46,445 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:51:46] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:52:06,927 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:06] "GET /documents HTTP/1.1" 200 -
+2025-04-02 21:52:08,805 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:08] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 21:52:13,919 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:13] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 21:52:15,714 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:15] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:52:19,822 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:19] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 21:52:26,500 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:26] "GET /documents?page=1&query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 21:52:29,712 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 21:52:29] "GET /preview/New_Microsoft_Word_Document_2_1_2.pdf HTTP/1.1" 200 -
+2025-04-02 22:14:14,924 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 22:14:14,924 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 22:14:22,654 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:14:22] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 22:14:22,722 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 7, in block 'content'
+    <a href="{{ url_for('settings.admin_settings') }}" class="btn btn-outline-primary mr-2">⚙️ Admin Ayarları</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'settings.admin_settings'. Did you mean 'admin_settings.admin_settings' instead?
+2025-04-02 22:14:22,727 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 22:14:22,728 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:14:22] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 22:14:24,345 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 7, in block 'content'
+    <a href="{{ url_for('settings.admin_settings') }}" class="btn btn-outline-primary mr-2">⚙️ Admin Ayarları</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'settings.admin_settings'. Did you mean 'admin_settings.admin_settings' instead?
+2025-04-02 22:14:24,351 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 22:14:24,354 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:14:24] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 22:14:28,776 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:14:28] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 22:14:28,787 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 7, in block 'content'
+    <a href="{{ url_for('settings.admin_settings') }}" class="btn btn-outline-primary mr-2">⚙️ Admin Ayarları</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'settings.admin_settings'. Did you mean 'admin_settings.admin_settings' instead?
+2025-04-02 22:14:28,792 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 22:14:28,794 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:14:28] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 22:16:43,580 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 22:16:43,581 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 22:16:47,468 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:16:47] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 22:16:47,511 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:16:47] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:16:59,873 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:16:59] "GET /documents?query=deneme&filter_category= HTTP/1.1" 200 -
+2025-04-02 22:17:07,499 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:17:07] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:17:14,742 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:17:14] "GET /documents?query=&filter_category=IFR HTTP/1.1" 200 -
+2025-04-02 22:17:18,390 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:17:18] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:18:06,281 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:18:06] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 22:18:09,160 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:18:09] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 22:18:38,644 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:18:38] "[32mPOST /admin/settings/delete/originator/6 HTTP/1.1[0m" 302 -
+2025-04-02 22:18:38,672 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:18:38] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 22:19:30,417 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:19:30] "[32mPOST /admin/settings/update/originator/4 HTTP/1.1[0m" 302 -
+2025-04-02 22:19:30,451 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:19:30] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 22:19:45,654 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:19:45] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:19:46,979 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:19:46] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 22:19:47,745 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:19:47] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:21:01,555 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:21:01] "GET /documents?query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 22:21:04,847 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:21:04] "GET /documents?query=&filter_category=IFC HTTP/1.1" 200 -
+2025-04-02 22:21:09,391 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:21:09] "GET /documents?query=&filter_category= HTTP/1.1" 200 -
+2025-04-02 22:21:10,830 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:21:10] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:21:13,645 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:21:13] "[32mGET /preview/PRO-SPP2-IDF-ME-GN00-001_R00.xlsx HTTP/1.1[0m" 302 -
+2025-04-02 22:23:39,649 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:23:39] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 22:57:11,485 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 22:57:11,486 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 22:57:18,066 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:57:18] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 22:57:18,143 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:57:18] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:57:59,199 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 22:57:59,202 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:57:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 22:57:59,222 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:57:59] "GET /login HTTP/1.1" 200 -
+2025-04-02 22:58:07,225 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 22:58:07,229 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 22:58:07,249 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:07] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:58:10,657 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 22:58:10,660 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 22:58:10,670 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:10] "GET /login HTTP/1.1" 200 -
+2025-04-02 22:58:16,260 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 22:58:16,264 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 22:58:16,282 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:16] "GET /documents HTTP/1.1" 200 -
+2025-04-02 22:58:23,674 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:58:23] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 22:59:13,495 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 22:59:13] "[31m[1mGET /upload HTTP/1.1[0m" 405 -
+2025-04-02 23:00:00,688 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:00:00,691 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:00:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:00:00,701 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:00:00] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:10:07,819 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:10:07,821 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:10:12,648 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:10:12] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:10:19,727 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:10:19,734 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:10:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:10:19,811 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 67, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 7, in block 'content'
+    <a href="{{ url_for('settings.admin_settings') }}" class="btn btn-outline-primary mr-2">⚙️ Admin Ayarları</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'settings.admin_settings'. Did you mean 'admin_settings.admin_settings' instead?
+2025-04-02 23:10:19,830 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 23:10:19,839 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:10:19] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 23:10:24,189 - app - ERROR - Exception on /documents [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\views\document_routes.py", line 42, in documents
+    return render_template('index.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\base.html", line 67, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\templates\index.html", line 7, in block 'content'
+    <a href="{{ url_for('settings.admin_settings') }}" class="btn btn-outline-primary mr-2">⚙️ Admin Ayarları</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\dokuman_yonetim_sistemi\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'settings.admin_settings'. Did you mean 'admin_settings.admin_settings' instead?
+2025-04-02 23:10:24,198 - app - ERROR - Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-02 23:10:24,203 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:10:24] "[35m[1mGET /documents HTTP/1.1[0m" 500 -
+2025-04-02 23:11:13,930 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:11:13,931 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:11:18,564 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:11:18] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 23:11:18,597 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:11:18] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:11:21,039 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:11:21] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:12:27,798 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:12:27,799 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:12:33,003 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:12:33] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:12:48,137 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:12:48] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 23:12:48,209 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:12:48] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:12:49,684 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:12:49,687 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:12:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:12:49,707 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:12:49] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:14:34,505 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:14:34,507 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:14:38,522 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:14:38] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:14:45,941 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:14:45,948 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:14:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:14:46,015 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:14:46] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:14:50,543 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:14:50] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:15:00,130 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:15:00] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:15:10,550 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:15:10] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:15:13,394 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:15:13] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:15:14,250 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:15:14,253 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:15:14] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:15:14,263 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:15:14] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:24:22,983 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:24:22,984 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:24:30,972 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:30] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:24:42,376 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:24:42,379 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:24:42,436 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:42] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:24:54,874 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:54] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-04-02 23:24:54,884 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:54] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:24:58,616 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:58] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-04-02 23:24:58,625 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:58] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:24:59,684 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:24:59] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:25:11,626 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:11] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:25:16,518 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:16] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:25:17,378 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:17] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:25:18,108 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:18] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-04-02 23:25:18,119 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:18] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:25:19,907 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:25:19,909 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:25:19,916 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:25:19] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:33:48,815 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:33:48,816 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:33:58,366 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:33:58] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:34:06,821 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:34:06,827 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:34:06,955 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:06] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:34:12,106 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:12] "GET /admin/settings HTTP/1.1" 200 -
+2025-04-02 23:34:32,991 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:32] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:34:34,164 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:34] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-04-02 23:34:34,183 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:34] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:34:58,518 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:58] "[32mGET /login?next=/ HTTP/1.1[0m" 302 -
+2025-04-02 23:34:58,535 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:34:58] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:35:06,832 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:35:06] "GET /documents?query=&filter_category=IFR HTTP/1.1" 200 -
+2025-04-02 23:35:10,632 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:35:10] "GET /preview/KLN-SPP2-ITP-CV-ES02-003_R00.pdf HTTP/1.1" 200 -
+2025-04-02 23:35:24,808 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:35:24,811 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:35:24] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:35:24,821 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:35:24] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:35:58,885 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:35:58] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:36:06,382 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:36:06,388 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:36:06,406 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:06] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:36:11,639 - app - INFO - User: admin - Action: logout - File: None
+2025-04-02 23:36:11,642 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:11] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:36:11,652 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:11] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:36:23,518 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 23:36:23,519 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 23:36:27,000 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:27] "GET /login?next=/ HTTP/1.1" 200 -
+2025-04-02 23:36:32,553 - app - INFO - User: Anonymous - Action: logout - File: None
+2025-04-02 23:36:32,555 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-02 23:36:32,566 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:32] "GET /login HTTP/1.1" 200 -
+2025-04-02 23:36:40,594 - app - INFO - User: admin - Action: login - File: None
+2025-04-02 23:36:40,599 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-04-02 23:36:40,668 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:40] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:36:44,532 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:44] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-04-02 23:36:44,550 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:44] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:36:51,988 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:51] "GET /documents HTTP/1.1" 200 -
+2025-04-02 23:36:52,043 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 23:36:52] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
