@@ -4,10 +4,13 @@
 -r requirements.txt
 
 # 2) Testing
-pytest~=7.4
-pytest-cov~=4.1
+pytest==7.4.0
+pytest-cov==4.1.0
+pytest-flask==1.3.0
+coverage==7.3.0
+pytest-mock==3.11.1
+pytest-xdist==3.3.1
 Faker~=25.0
-pytest-mock~=3.14
 
 # 3) Debugging
 debugpy~=1.8
