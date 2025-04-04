@@ -25,6 +25,8 @@ wheels/
 .venv
 venv/
 ENV/
+.env.local
+.flaskenv
 
 # IDE
 .idea/
@@ -39,6 +41,7 @@ logs/
 # Database
 *.db
 *.sqlite3
+sqlite3.exe
 
 # Testing
 .coverage
@@ -52,3 +55,6 @@ Thumbs.db
 # Project specific
 instance/
 uploads/
+
+# Jupyter
+*.ipynb
