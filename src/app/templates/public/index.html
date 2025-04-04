@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Document Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1 class="display-4 mb-4">Document Management System</h1>
+            <p class="lead mb-4">Welcome to our document management system. Please log in to access your documents.</p>
+            <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

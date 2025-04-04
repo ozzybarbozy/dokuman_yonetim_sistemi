@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Document - Document Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Upload Document</h2>
+    <form method="POST" action="{{ url_for('documents.upload') }}" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        
+        <div class="mb-3">
+            {{ form.file.label(class="form-label") }}
+            {{ form.file(class="form-control") }}
+            {% if form.file.errors %}
+                <div class="text-danger">
+                    {% for error in form.file.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="mb-3">
+                    {{ form.originator.label(class="form-label") }}
+                    {{ form.originator(class="form-select") }}
+                    {% if form.originator.errors %}
+                        <div class="text-danger">
+                            {% for error in form.originator.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    {{ form.document_type.label(class="form-label") }}
+                    {{ form.document_type(class="form-select") }}
+                    {% if form.document_type.errors %}
+                        <div class="text-danger">
+                            {% for error in form.document_type.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    {{ form.discipline.label(class="form-label") }}
+                    {{ form.discipline(class="form-select") }}
+                    {% if form.discipline.errors %}
+                        <div class="text-danger">
+                            {% for error in form.discipline.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    {{ form.building_code.label(class="form-label") }}
+                    {{ form.building_code(class="form-select") }}
+                    {% if form.building_code.errors %}
+                        <div class="text-danger">
+                            {% for error in form.building_code.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            {{ form.description.label(class="form-label") }}
+            {{ form.description(class="form-control", rows="3") }}
+            {% if form.description.errors %}
+                <div class="text-danger">
+                    {% for error in form.description.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.category.label(class="form-label") }}
+                    {{ form.category(class="form-select") }}
+                    {% if form.category.errors %}
+                        <div class="text-danger">
+                            {% for error in form.category.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.project_code.label(class="form-label") }}
+                    {{ form.project_code(class="form-control") }}
+                    {% if form.project_code.errors %}
+                        <div class="text-danger">
+                            {% for error in form.project_code.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Upload Document</button>
+            <a href="{{ url_for('documents.index') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %} 

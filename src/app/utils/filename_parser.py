@@ -1,5 +1,5 @@
 import re
-from models import Originator, DocumentType, Discipline, BuildingCode
+from ..models.settings import Originator, DocumentType, Discipline, BuildingCode
 
 def parse_and_validate_filename(base_name):
     pattern = r'^([A-Z]{3})-SPP2-([A-Z]{3})-([A-Z]{2})-([A-Z0-9]+)-(\d{3})_R(\d{2})$'

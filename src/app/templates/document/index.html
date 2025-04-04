@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Documents - Document Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Documents</h2>
+        {% if current_user.is_admin %}
+        <a href="{{ url_for('documents.upload') }}" class="btn btn-primary">
+            <i class="bi bi-upload"></i> Upload Document
+        </a>
+        {% endif %}
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Document Number</th>
+                    <th>Filename</th>
+                    <th>Category</th>
+                    <th>Project Code</th>
+                    <th>Upload Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if documents %}
+                    {% for document in documents %}
+                    <tr>
+                        <td>{{ document.document_number }}</td>
+                        <td>{{ document.filename }}</td>
+                        <td>{{ document.category.code }}</td>
+                        <td>{{ document.building_code.code }}</td>
+                        <td>{{ document.upload_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>
+                            <a href="{{ url_for('documents.preview_file', filename=document.filename) }}" class="btn btn-sm btn-info">
+                                <i class="bi bi-eye"></i> Preview
+                            </a>
+                            <a href="{{ url_for('documents.download', document_id=document.id) }}" class="btn btn-sm btn-success">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                            {% if current_user.is_admin %}
+                            <form method="POST" action="{{ url_for('documents.delete', document_id=document.id) }}" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this document?');">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center">No documents found.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %} 

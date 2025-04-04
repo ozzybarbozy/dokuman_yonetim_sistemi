@@ -21,8 +21,9 @@ wheels/
 *.egg
 
 # Virtual Environment
+.env
+.venv
 venv/
-.venv/
 ENV/
 
 # IDE
@@ -31,31 +32,23 @@ ENV/
 *.swp
 *.swo
 
+# Logs
+logs/
+*.log
+
 # Database
 *.db
 *.sqlite3
 
-# Logs
-*.log
-logs/
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
 
-# Environment variables
-.env
-.flaskenv
-
-# Uploads
-uploads/
-
-# Instance folder
-instance/
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# macOS
+# OS
 .DS_Store
-.AppleDouble
-.LSOverride 
+Thumbs.db
+
+# Project specific
+instance/
+uploads/

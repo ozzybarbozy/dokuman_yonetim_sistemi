@@ -8,14 +8,14 @@ from flask import (
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 
-from models import (
+from ..models import (
     Document, DocumentSequence,
     Originator, DocumentType, Discipline,
     BuildingCode, Category
 )
-from extensions import db
-from app import log_activity, validate_file, generate_document_number
-from utils.filename_parser import parse_and_validate_filename
+from .. import db
+from ..utils import log_activity, validate_file, generate_document_number
+from ..utils.filename_parser import parse_and_validate_filename
 
 upload_bp = Blueprint('upload', __name__)
 

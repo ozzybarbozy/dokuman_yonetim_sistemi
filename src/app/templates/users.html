@@ -1,61 +1,105 @@
 {% extends "base.html" %}
 
-{% block title %}Kullanıcı Yönetimi{% endblock %}
+{% block title %}User Management - Document Management System{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h4>👥 Kullanıcı Yönetimi</h4>
-    <a href="{{ url_for('documents.documents') }}" class="btn btn-secondary">← Geri Dön</a>
-  </div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h2>User Management</h2>
+        </div>
+        <div class="col text-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                <i class="bi bi-plus-circle"></i> Create User
+            </button>
+        </div>
+    </div>
 
-  <!-- Flash mesajlar -->
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="mb-3">
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endwith %}
+    <div class="table-responsive mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        {% if user.is_admin %}
+                        <span class="badge bg-success">Yes</span>
+                        {% else %}
+                        <span class="badge bg-secondary">No</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ url_for('users.change_role') }}" class="d-inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <input type="hidden" name="is_admin" value="{{ '0' if user.is_admin else '1' }}">
+                            <button type="submit" class="btn btn-sm btn-warning">
+                                {% if user.is_admin %}
+                                <i class="bi bi-person-x"></i> Remove Admin
+                                {% else %}
+                                <i class="bi bi-person-check"></i> Make Admin
+                                {% endif %}
+                            </button>
+                        </form>
+                        <form method="POST" action="{{ url_for('users.delete_user') }}" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
-  <!-- Kullanıcılar tablosu -->
-  <div class="table-responsive card p-3 shadow">
-    <table class="table table-hover table-bordered text-center">
-      <thead class="thead-dark">
-        <tr>
-          <th>ID</th>
-          <th>Kullanıcı Adı</th>
-          <th>Email</th>
-          <th>Rol</th>
-          <th>İşlemler</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for user in users %}
-        <tr>
-          <td>{{ user.id }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
-          <td>
-            <a href="{{ url_for('users.edit_user', user_id=user.id) }}" class="btn btn-sm btn-primary">📝</a>
-            {% if user.id != current_user.id %}
-            <form method="POST" action="{{ url_for('users.delete_user', user_id=user.id) }}" style="display:inline;" onsubmit="return confirm('Bu kullanıcıyı silmek istediğine emin misin?');">
-              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-              <button type="submit" class="btn btn-sm btn-danger">❌</button>
+<!-- Create User Modal -->
+<div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="{{ url_for('users.create_user_route') }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="is_admin" name="is_admin" value="1">
+                            <input type="hidden" name="is_admin" value="0">
+                            <label class="form-check-label" for="is_admin">
+                                Admin User
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </div>
             </form>
-            {% endif %}
-          </td>
-        </tr>
-        {% else %}
-        <tr>
-          <td colspan="5" class="text-muted">Henüz kullanıcı yok.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
