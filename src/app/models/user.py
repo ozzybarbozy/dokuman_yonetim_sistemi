@@ -12,6 +12,10 @@ class User(db.Model, UserMixin):
     is_admin = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     last_login = db.Column(db.DateTime)
+    name = db.Column(db.String(50))
+    surname = db.Column(db.String(50))
+    rank = db.Column(db.String(50))
+    phone_number = db.Column(db.String(15))
 
     def __repr__(self):
         return f'<User {self.email}>'

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard - Document Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Admin Dashboard</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Users</h5>
+                    <p class="card-text">Add, remove, or edit users.</p>
+                    <a href="{{ url_for('users_bp.list_users') }}" class="btn btn-primary">Go to Users</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Document Numbering Codes</h5>
+                    <p class="card-text">Manage codes for document numbering.</p>
+                    <a href="{{ url_for('admin_settings.admin_settings') }}" class="btn btn-primary">Go to Document Codes</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+{% endblock %}

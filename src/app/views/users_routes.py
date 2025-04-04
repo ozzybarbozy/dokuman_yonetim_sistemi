@@ -4,7 +4,7 @@ from .. import db, bcrypt
 from ..models.user import User
 from functools import wraps
 
-users_bp = Blueprint('users', __name__)
+users_bp = Blueprint('users_bp', __name__)
 
 def admin_required(f):
     @wraps(f)
@@ -15,7 +15,7 @@ def admin_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-@users_bp.route('/users')
+@users_bp.route('/users', methods=['GET'])
 @login_required
 @admin_required
 def list_users():
@@ -33,7 +33,7 @@ def add_user():
         
         if User.query.filter_by(username=username).first():
             flash('Username already exists', 'error')
-            return redirect(url_for('users.add_user'))
+            return redirect(url_for('users_bp.add_user'))
             
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         new_user = User(username=username, password=hashed_password, role=role)
@@ -42,7 +42,7 @@ def add_user():
         db.session.commit()
         
         flash('User added successfully', 'success')
-        return redirect(url_for('users.list_users'))
+        return redirect(url_for('users_bp.list_users'))
         
     return render_template('users/add.html')
 
@@ -53,27 +53,23 @@ def edit_user(id):
     user = User.query.get_or_404(id)
     
     if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        role = request.form.get('role')
+        user.email = request.form.get('email')
+        user.name = request.form.get('name')
+        user.surname = request.form.get('surname')
+        user.rank = request.form.get('rank')
+        user.phone_number = request.form.get('phone_number')
         
-        existing_user = User.query.filter_by(username=username).first()
-        if existing_user and existing_user.id != id:
-            flash('Username already exists', 'error')
-            return redirect(url_for('users.edit_user', id=id))
-            
-        user.username = username
+        password = request.form.get('password')
         if password:
-            user.password = bcrypt.generate_password_hash(password).decode('utf-8')
-        user.role = role
+            user.set_password(password)
         
         db.session.commit()
         flash('User updated successfully', 'success')
-        return redirect(url_for('users.list_users'))
+        return redirect(url_for('users_bp.list_users'))
         
     return render_template('users/edit.html', user=user)
 
-@users_bp.route('/users/delete/<int:id>')
+@users_bp.route('/users/delete/<int:id>', methods=['POST'])
 @login_required
 @admin_required
 def delete_user(id):
@@ -87,3 +83,21 @@ def delete_user(id):
     
     flash('User deleted successfully', 'success')
     return redirect(url_for('users.list_users'))
+
+@users_bp.route('/users/create', methods=['POST'])
+@login_required
+def create_user_route():
+    # Logic to create a new user
+    pass
+
+@users_bp.route('/users/delete', methods=['POST'])
+@login_required
+def delete_user_post():
+    # Logic to delete a user
+    pass
+
+@users_bp.route('/users/change-role', methods=['POST'])
+@login_required
+def change_role():
+    # Logic to change user role
+    pass

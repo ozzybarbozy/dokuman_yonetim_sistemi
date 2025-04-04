@@ -82,3 +82,11 @@ def update_setting(model, item_id):
     db.session.commit()
     flash("Record updated successfully.", "success")
     return redirect(url_for('admin_settings.admin_settings'))
+
+
+@settings_bp.route('/admin/dashboard', methods=['GET'])
+@login_required
+def admin_dashboard():
+    if not current_user.is_admin:
+        abort(403)
+    return render_template('admin/dashboard.html')

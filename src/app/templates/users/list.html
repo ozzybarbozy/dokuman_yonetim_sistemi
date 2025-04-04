@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}User List - Document Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>User List</h1>
+    
+    <!-- Button to Add New User -->
+    <div class="mb-3">
+        <a href="{{ url_for('users_bp.add_user') }}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add New User
+        </a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Rank</th>
+                <th>Phone Number</th>
+                <th>Admin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.rank }}</td>
+                <td>{{ user.phone_number }}</td>
+                <td>
+                    {% if user.is_admin %}
+                    <span class="badge bg-success">Yes</span>
+                    {% else %}
+                    <span class="badge bg-secondary">No</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ url_for('users_bp.edit_user', id=user.id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ url_for('users_bp.delete_user', id=user.id) }}" method="POST" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="8">No users found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

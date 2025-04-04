@@ -7,7 +7,7 @@
 
   <!-- Back to Admin -->
   <div class="mb-4">
-    <a href="{{ url_for('admin_settings.admin_settings') }}" class="btn btn-secondary">← Back to Admin</a>
+    <a href="{{ url_for('admin_settings.admin_dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
   </div>
 
   <!-- Flash Messages -->
@@ -52,13 +52,24 @@
           <ul class="list-group mb-3">
             {% for item in items %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <form method="POST" action="{{ url_for('admin_settings.update_setting', model=model_key, item_id=item.id) }}" class="form-inline flex-grow-1">
-                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                  <input type="text" name="code" value="{{ item.code }}" class="form-control me-2" style="width: 120px;" required>
-                  <input type="text" name="description" value="{{ item.description }}" class="form-control flex-grow-1" required>
-                  <button type="submit" class="btn btn-sm btn-primary ms-2">Update</button>
-                </form>
-                <button class="btn btn-sm btn-outline-danger ms-2" onclick="confirmDelete('{{ url_for('admin_settings.delete_setting', model=model_key, item_id=item.id) }}')">Delete</button>
+                <div class="row mb-2">
+                  <div class="col-md-3">
+                    <input type="text" name="code" class="form-control" placeholder="Code" value="{{ item.code }}" required>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="description" class="form-control long-input" placeholder="Description" value="{{ item.description }}" required>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <form method="POST" action="{{ url_for('admin_settings.update_setting', model=model_key, item_id=item.id) }}" class="me-2">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                  </form>
+                  <form method="POST" action="{{ url_for('admin_settings.delete_setting', model=model_key, item_id=item.id) }}" onsubmit="return confirm('Are you sure you want to delete this record?');">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                  </form>
+                </div>
               </li>
             {% else %}
               <li class="list-group-item text-muted">No records found.</li>
@@ -74,7 +85,7 @@
                 <input type="text" name="code" class="form-control" placeholder="Code" required>
               </div>
               <div class="col">
-                <input type="text" name="description" class="form-control" placeholder="Description" required>
+                <input type="text" name="description" class="form-control long-input" placeholder="Description" required>
               </div>
               <div class="col-auto">
                 <button class="btn btn-success" type="submit">Add</button>
@@ -115,4 +126,12 @@ function confirmDelete(url) {
   deleteModal.show();
 }
 </script>
+
+<style>
+.long-input {
+    width: 100%; /* Full width of the column */
+    max-width: 800px; /* Set a maximum width */
+}
+</style>
+
 {% endblock %} 
